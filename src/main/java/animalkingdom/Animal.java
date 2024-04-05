@@ -2,7 +2,7 @@ package animalkingdom;
 
 public abstract class Animal {
 
-    private String food;
+    protected String food;
 
     private int id;
 
@@ -18,4 +18,26 @@ public abstract class Animal {
     public static void printAnimalSize(Animal animal) {
         System.out.println("This animal's size is " + animal.size.getSize() + ".");
     }
+
+
+    public static void printUniqueAnimalMethod(Animal animal){
+        if(animal instanceof Dog){
+            ((Dog) animal).fetch();
+        }
+
+        if(animal instanceof Cat){
+            ((Cat) animal).scratch();
+        }
+
+    }
+
+
+
+    public void makeSound(){
+        System.out.println("unknown animal sound");
+    }
+
+    public abstract void printAnimalFood(); // signature
+
+
 }
